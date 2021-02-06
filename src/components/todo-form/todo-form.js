@@ -18,7 +18,6 @@ const TodoForm = () => {
                     className="ml-1"
                 >Add Task</AppButton>
             </div>
-            <TodoList />
         </div>
     )
 }
