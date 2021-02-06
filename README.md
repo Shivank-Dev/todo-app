@@ -1,2 +1,2 @@
 # todo-app
-This is just a todo app which is created in reactjs
+This is just a todo app that is created in reactjs
