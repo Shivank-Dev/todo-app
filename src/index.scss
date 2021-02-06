@@ -20,3 +20,9 @@ code {
 .align-center {
   align-items: center !important;
 }
+.line-through {
+  text-decoration: "line-through";
+}
+.remove-line-through {
+  text-decoration: none;
+}
