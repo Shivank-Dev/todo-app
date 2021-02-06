@@ -3,7 +3,8 @@ import React from "react";
 import { DoneIcon, DeleteIcon } from "../$widgets/icons/app-icons";
 import "./todo-list.scss";
 
-const TodoList = (props) => {
+const TodoList = ({todoItems}) => {
+    console.log("todoItems ", todoItems);
     return (
         <div className="todo-list-main">
             <Box mt={3}>
@@ -12,13 +13,17 @@ const TodoList = (props) => {
                     <TableContainer component={Paper}>
                         <Table>
                             <TableBody>
+                                {
+                                    todoItems && todoItems.map(todoItem => (
                                 <TableRow>
-                                    <TableCell>hello this is demo task it could be more long</TableCell>
-                                    <TableCell className="d-flex justify-center align-center">
+                                    <TableCell>{todoItem}</TableCell>
+                                    <TableCell className="d-flex justify-end align-center">
                                         <DoneIcon />
                                         <DeleteIcon/>
                                     </TableCell>
                                 </TableRow>
+                                    ))
+                                }
                             </TableBody>
                         </Table>
                     </TableContainer>
