@@ -3,7 +3,7 @@ import React from "react";
 import { DoneIcon, DeleteIcon } from "../$widgets/icons/app-icons";
 import "./todo-list.scss";
 
-const TodoList = ({todoItems}) => {
+const TodoList = ({todoItems, removeTask}) => {
     console.log("todoItems ", todoItems);
     return (
         <div className="todo-list-main">
@@ -16,10 +16,10 @@ const TodoList = ({todoItems}) => {
                                 {
                                     todoItems && todoItems.map(todoItem => (
                                 <TableRow>
-                                    <TableCell>{todoItem}</TableCell>
+                                    <TableCell>{todoItem.text}</TableCell>
                                     <TableCell className="d-flex justify-end align-center">
                                         <DoneIcon />
-                                        <DeleteIcon/>
+                                        <DeleteIcon onClick={() => removeTask(todoItem.id)}/>
                                     </TableCell>
                                 </TableRow>
                                     ))
