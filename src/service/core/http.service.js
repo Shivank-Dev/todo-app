@@ -19,5 +19,4 @@ HTTP.interceptor.response.use(undefined, (error) => {
     if (status === 500) {
         return toast.error("500 | Internal Server Error");
     }
-}
 })
