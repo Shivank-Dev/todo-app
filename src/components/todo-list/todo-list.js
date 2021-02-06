@@ -1,5 +1,7 @@
 import { Paper, Box, TableBody, TableContainer, TableCell, TableRow, Table, Grid } from "@material-ui/core";
 import React from "react";
+import { DoneIcon, DeleteIcon } from "../$widgets/icons/app-icons";
+import "./todo-list.scss";
 
 const TodoList = (props) => {
     return (
@@ -12,7 +14,10 @@ const TodoList = (props) => {
                             <TableBody>
                                 <TableRow>
                                     <TableCell>hello this is demo task it could be more long</TableCell>
-                                    <TableCell>Actions</TableCell>
+                                    <TableCell className="d-flex justify-center align-center">
+                                        <DoneIcon />
+                                        <DeleteIcon/>
+                                    </TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
