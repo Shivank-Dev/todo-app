@@ -46,31 +46,33 @@ const TodoApp = () => {
         setTodoItems([...updatedTodoList]);
     }
 
-    const updateTodo = async ({ _id, name }, status) => {
-        todoItems.forEach(todo => {
-            if (todo._id === _id) {
-                todo.isDone = status;
+    const editTodo = async (event, id, setEditing) => {
+        event.persist();
+        event.stopPropagation();
+        todoItems.forEach(todo => { 
+            if (todo._id === id) {
+                todo.name = event.target.value;
             }
-        });
+        })
         const todoReq = {
-            name,
-            isDone: status
+            name: event.target.value
         }
-        const todo = await TodoService.updateTodo(_id, todoReq);
+        const todo = await TodoService.updateTodo(id, todoReq);
         if (!todo) {
             return;
         }
-        toast.info("Task Status Updated Successfully!");
+        toast.info("Task Updated Successfully!");
         setTodoItems([...todoItems]);
+        setEditing(null);
     }
     
     return (
         <div className="todo-app-main">
-            <h1 className="title text-center">Todo Application</h1>
+            <h1 className="title text-center mt-5">Todo Application</h1>
             <TodoForm addTodo={addTodo} />
             {
                 todoItems ?
-                    <TodoList todoItems={todoItems} removeTask={removeTask} updateTodo={updateTodo} />
+                    <TodoList todoItems={todoItems} removeTask={removeTask} editTodo={editTodo}/>
                     :
                     <NoTask />
             }

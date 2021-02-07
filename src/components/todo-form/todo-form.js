@@ -18,7 +18,7 @@ const TodoForm = ({ addTodo }) => {
         <div className="todo-form-main">
             <div className="form">
                 <Grid container justify="center">
-                    <Grid item md={4} sm={10}>
+                    <Grid item xs={6} sm={6} md={6} lg={4}>
                         <AppTextField
                             variant="outlined"
                             size="small"

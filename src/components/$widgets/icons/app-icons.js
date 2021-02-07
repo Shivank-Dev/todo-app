@@ -1,17 +1,6 @@
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
-
-const DoneIcon = (props) => (
-    <CheckCircleIcon style={{
-        width: "30px",
-        height: "30px",
-        cursor: "pointer",
-        color: "#1db56d"
-    }}
-    {...props}
-    />
-)
+import EditIcon from '@material-ui/icons/Edit';
+import CloseIcon from '@material-ui/icons/Close';
 
 const DeleteIcon = (props) => (
     <HighlightOffIcon style={{
@@ -24,19 +13,32 @@ const DeleteIcon = (props) => (
     />
 )
 
-const IncompleteIcon = (props) => (
-    <CheckCircleOutlineIcon style={{
-        width: "30px",
-        height: "30px",
-        cursor: "pointer",
-        color: "#1db56d"
-    }}
-    {...props}
-/>
+const AppEditIcon = (props) => (
+  <EditIcon style={{
+    width: "30px",
+    height: "30px",
+    cursor: "pointer",
+    color: "#1d84b5"
+  }}
+  {...props}
+  />
+)
+const AppCloseIcon = (props) => (
+  <CloseIcon style={{
+    width: "20px",
+    height: "40px",
+    display: "flex",
+    alignItems: "center",
+    marginLeft: "20px",
+    cursor: "pointer",
+    color: "#aaa"
+  }}
+  {...props}
+  />
 )
 
 export {
-    DoneIcon,
     DeleteIcon,
-    IncompleteIcon
+    AppEditIcon,
+    AppCloseIcon
 }
