@@ -3,7 +3,7 @@ import React from "react";
 import { DoneIcon, DeleteIcon, IncompleteIcon } from "../$widgets/icons/app-icons";
 import "./todo-list.scss";
 
-const TodoList = ({todoItems, removeTask, updateTodoStatus}) => {
+const TodoList = ({todoItems, removeTask, updateTodo}) => {
     return (
         <div className="todo-list-main">
             <Box mt={3}>
@@ -15,14 +15,14 @@ const TodoList = ({todoItems, removeTask, updateTodoStatus}) => {
                                 {
                                     todoItems && todoItems.map(todoItem => (
                                 <TableRow>
-                                    <TableCell className={todoItem.todoStatus === "completed" ? "line-through" : "remove-line-through"}>{todoItem.text}</TableCell>
+                                    <TableCell className={todoItem.isDone ? "line-through" : "remove-line-through"}>{todoItem.name}</TableCell>
                                     <TableCell className="d-flex justify-end align-center">
                                         {
-                                        todoItem.todoStatus === "incomplete" ?
-                                        <IncompleteIcon onClick={() => updateTodoStatus(todoItem.id, "completed")}/> :
-                                        <DoneIcon onClick={() => updateTodoStatus(todoItem.id, "incomplete")} />
+                                        !todoItem.isDone ?
+                                        <IncompleteIcon onClick={() => updateTodo(todoItem, true)}/> :
+                                        <DoneIcon onClick={() => updateTodo(todoItem, false)} />
                                         }
-                                        <DeleteIcon onClick={() => removeTask(todoItem.id)}/>
+                                        <DeleteIcon onClick={() => removeTask(todoItem._id)}/>
                                     </TableCell>
                                 </TableRow>
                                     ))

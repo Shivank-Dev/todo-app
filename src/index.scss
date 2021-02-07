@@ -26,7 +26,10 @@ code {
 }
 .line-through {
   text-decoration: line-through;
+  word-break: break-word !important;
+
 }
 .remove-line-through {
   text-decoration: none;
+  word-break: break-all !important;
 }
