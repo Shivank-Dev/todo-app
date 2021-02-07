@@ -3,7 +3,7 @@ import React from "react";
 
 const TextFieldWithStyles = withStyles({
     root: {
-        width: "40vw"
+        width: "100%"
     },
 })((props) => <TextField {...props} />);
 

@@ -7,8 +7,8 @@ const TodoList = ({todoItems, removeTask, updateTodo}) => {
     return (
         <div className="todo-list-main">
             <Box mt={3}>
-            <Grid container spacing={1} justify="center">
-                <Grid item md={6}>
+            <Grid container spacing={3} justify="center">
+                <Grid item sm={12} md={6} lg={5} className="w-90 px-0">
                     <TableContainer component={Paper}>
                         <Table>
                             <TableBody>
