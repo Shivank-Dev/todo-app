@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -21,8 +22,8 @@ code {
   align-items: center !important;
 }
 .line-through {
-  text-decoration: "line-through";
+  text-decoration: line-through !important;
 }
 .remove-line-through {
-  text-decoration: none;
+  text-decoration: none !important;
 }

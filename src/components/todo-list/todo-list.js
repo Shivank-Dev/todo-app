@@ -1,10 +1,9 @@
 import { Paper, Box, TableBody, TableContainer, TableCell, TableRow, Table, Grid } from "@material-ui/core";
 import React from "react";
-import { DoneIcon, DeleteIcon } from "../$widgets/icons/app-icons";
+import { DoneIcon, DeleteIcon, ResetIcon } from "../$widgets/icons/app-icons";
 import "./todo-list.scss";
 
-const TodoList = ({todoItems, removeTask, completeTask}) => {
-    console.log("todoItems ", todoItems);
+const TodoList = ({todoItems, removeTask, updateTodoStatus}) => {
     return (
         <div className="todo-list-main">
             <Box mt={3}>
@@ -16,9 +15,13 @@ const TodoList = ({todoItems, removeTask, completeTask}) => {
                                 {
                                     todoItems && todoItems.map(todoItem => (
                                 <TableRow>
-                                    <TableCell className={todoItem.todoStatus === "completed" ? "line-through" : "remove-line-through"}>{todoItem.text}{todoItem.status}</TableCell>
+                                    <TableCell className={todoItem.todoStatus === "completed" ? "line-through" : "remove-line-through"}>{todoItem.text}</TableCell>
                                     <TableCell className="d-flex justify-end align-center">
-                                        <DoneIcon onClick={() => completeTask(todoItem.id)}/>
+                                        {
+                                        todoItem.todoStatus === "incomplete" ?
+                                        <DoneIcon onClick={() => updateTodoStatus(todoItem.id, "completed")}/> :
+                                        <ResetIcon onClick={() => updateTodoStatus(todoItem.id, "incomplete")} />
+                                        }
                                         <DeleteIcon onClick={() => removeTask(todoItem.id)}/>
                                     </TableCell>
                                 </TableRow>

@@ -6,6 +6,15 @@ import TodoList from "../todo-list/todo-list";
 
 const TodoForm = ({addTodo}) => {
     let textRef = useRef();
+
+    const handleTodoInput = (e) => {
+        console.log("e ", e);
+        if (e.key === 'Enter') {
+            addTodo(textRef.current.value);
+            textRef.current.value = '';
+        }
+    }
+
     return (
         <div className="todo-form-main">
             <div className="form">
@@ -13,6 +22,7 @@ const TodoForm = ({addTodo}) => {
                     variant="outlined"
                     size="small"
                     inputRef={textRef}
+                    onKeyDown={(e) => handleTodoInput(e)}
                 />
                 <AppButton
                     variant="contained"

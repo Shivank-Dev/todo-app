@@ -9,27 +9,24 @@ const TodoApp = () => {
     const addTodo = (val) => {
         const todo = { text: val, id: window.id++, todoStatus }
         setTodoItems([...todoItems, todo]);
-        console.log("todo items ", todoItems);
     }
     const removeTask = (id) => {
         const updatedTodoList = todoItems.filter(todo => todo.id !== id);
         setTodoItems(updatedTodoList);
     }
-    const completeTask = (id) => {
-        console.log("todoItems ", todoItems);
+    const updateTodoStatus = (id, status) => {
         todoItems.forEach(todo => {
             if (todo.id === id) {
-                todo.todoStatus = "completed";
+                todo.todoStatus = status;
             }
         })
 
-        console.log("updatedTodoList ", todoItems);
         setTodoItems([...todoItems]);
     }
     return (
         <div className="todo-app-main">
             <TodoForm addTodo={addTodo} />
-            <TodoList todoItems={todoItems} removeTask={removeTask} completeTask={completeTask} />
+            <TodoList todoItems={todoItems} removeTask={removeTask} updateTodoStatus={updateTodoStatus} />
         </div>
     )
 }
