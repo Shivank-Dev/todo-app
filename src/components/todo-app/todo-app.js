@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import TodoForm from "../todo-form/todo-form";
 import TodoList from "../todo-list/todo-list";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
+import NoTask from "../no-task/no-task";
 
 window.id = 0;
 const TodoApp = () => {
@@ -32,7 +33,12 @@ const TodoApp = () => {
     return (
         <div className="todo-app-main">
             <TodoForm addTodo={addTodo} />
-            <TodoList todoItems={todoItems} removeTask={removeTask} updateTodoStatus={updateTodoStatus} />
+            {
+                todoItems.length > 0 ?
+                    <TodoList todoItems={todoItems} removeTask={removeTask} updateTodoStatus={updateTodoStatus} />
+                    :
+                    <NoTask/>
+            }
         </div>
     )
 }

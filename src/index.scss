@@ -12,18 +12,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.text-center {
+  text-align: center;
+}
 .d-flex {
-  display: flex !important;
+  display: flex;
 }
 .justify-end {
-  justify-content: flex-end !important;
+  justify-content: flex-end;
 }
 .align-center {
-  align-items: center !important;
+  align-items: center;
 }
 .line-through {
-  text-decoration: line-through !important;
+  text-decoration: line-through;
 }
 .remove-line-through {
-  text-decoration: none !important;
+  text-decoration: none;
 }
