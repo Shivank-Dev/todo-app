@@ -47,8 +47,6 @@ const TodoApp = () => {
     }
 
     const editTodo = async (event, id, setEditing) => {
-        event.persist();
-        event.stopPropagation();
         todoItems.forEach(todo => { 
             if (todo._id === id) {
                 todo.name = event.target.value;

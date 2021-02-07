@@ -2,7 +2,6 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import {baseUrl} from '../../config/urlConfig';
 
-{console.log("base url ", baseUrl)};
 export const HTTP = axios.create({
     baseURL: baseUrl
 })

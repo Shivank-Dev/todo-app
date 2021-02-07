@@ -18,7 +18,7 @@ const TodoList = ({ todoItems, removeTask, editTodo }) => {
                                 <TableBody>
                                     {
                                         todoItems && todoItems.map(todoItem => (
-                                            <TableRow>
+                                            <TableRow key={todoItem._id}>
                                                 <TableCell className= "py-0">
                                                     {
                                                         editing === todoItem._id ?
