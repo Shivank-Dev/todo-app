@@ -1,9 +1,9 @@
-import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
-import UndoIcon from '@material-ui/icons/Undo';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 
 const DoneIcon = (props) => (
-    <AssignmentTurnedInIcon style={{
+    <CheckCircleIcon style={{
         width: "30px",
         height: "30px",
         cursor: "pointer",
@@ -24,8 +24,8 @@ const DeleteIcon = (props) => (
     />
 )
 
-const ResetIcon = (props) => (
-    <UndoIcon style={{
+const IncompleteIcon = (props) => (
+    <CheckCircleOutlineIcon style={{
         width: "30px",
         height: "30px",
         cursor: "pointer",
@@ -38,5 +38,5 @@ const ResetIcon = (props) => (
 export {
     DoneIcon,
     DeleteIcon,
-    ResetIcon
+    IncompleteIcon
 }

@@ -1,6 +1,6 @@
 import { Paper, Box, TableBody, TableContainer, TableCell, TableRow, Table, Grid } from "@material-ui/core";
 import React from "react";
-import { DoneIcon, DeleteIcon, ResetIcon } from "../$widgets/icons/app-icons";
+import { DoneIcon, DeleteIcon, IncompleteIcon } from "../$widgets/icons/app-icons";
 import "./todo-list.scss";
 
 const TodoList = ({todoItems, removeTask, updateTodoStatus}) => {
@@ -19,8 +19,8 @@ const TodoList = ({todoItems, removeTask, updateTodoStatus}) => {
                                     <TableCell className="d-flex justify-end align-center">
                                         {
                                         todoItem.todoStatus === "incomplete" ?
-                                        <DoneIcon onClick={() => updateTodoStatus(todoItem.id, "completed")}/> :
-                                        <ResetIcon onClick={() => updateTodoStatus(todoItem.id, "incomplete")} />
+                                        <IncompleteIcon onClick={() => updateTodoStatus(todoItem.id, "completed")}/> :
+                                        <DoneIcon onClick={() => updateTodoStatus(todoItem.id, "incomplete")} />
                                         }
                                         <DeleteIcon onClick={() => removeTask(todoItem.id)}/>
                                     </TableCell>

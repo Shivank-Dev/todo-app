@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import TodoForm from "../todo-form/todo-form";
 import TodoList from "../todo-list/todo-list";
+import {toast} from "react-toastify";
 
 window.id = 0;
 const TodoApp = () => {
     const [todoItems, setTodoItems] = useState([]);
     const [todoStatus, setTodoStatus] = useState("incomplete");
     const addTodo = (val) => {
+        console.log("val ", val);
+        if (!val) {
+            toast.error("Task can't be empty!");
+            return;
+        }
         const todo = { text: val, id: window.id++, todoStatus }
         setTodoItems([...todoItems, todo]);
     }
