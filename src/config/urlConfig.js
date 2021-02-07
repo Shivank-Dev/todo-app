@@ -9,6 +9,7 @@ export const baseUrl = config.env === Environment.dev ? baseUrlDev : baseUrlProd
 export const urls = {
     addTodo: "/addTodo",
     getAllTodo: "/getAllTodo",
-    updateTodo: "/updateTodo"
+    updateTodo: "/updateTodo",
+    deleteTodo: "/deleteTodo"
 }
 
