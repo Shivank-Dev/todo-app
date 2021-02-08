@@ -4,7 +4,7 @@ import { Paper, Box, Grid, Card, CardContent, Typography, makeStyles } from "@ma
 const NoTask = () => (
     <Box mt={3}>
         <Grid container spacing={1} justify="center">
-            <Grid item md={6}>
+            <Grid item xs={10} sm={8} md={7} lg={5}>
                 <Card>
                     <CardContent>
                         <Typography component="p" className="text-center">No task Added!</Typography>

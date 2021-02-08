@@ -69,7 +69,7 @@ const TodoApp = () => {
             <h1 className="title text-center mt-5">Todo Application</h1>
             <TodoForm addTodo={addTodo} />
             {
-                todoItems ?
+                todoItems.length > 0 ?
                     <TodoList todoItems={todoItems} removeTask={removeTask} editTodo={editTodo}/>
                     :
                     <NoTask />
